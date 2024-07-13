@@ -1,6 +1,8 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Test.Models;
+using Kendo.Mvc;
+using Kendo.Mvc.UI;
 
 namespace Test.Controllers;
 
@@ -28,5 +30,21 @@ public class HomeController : Controller
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
+
+    public JsonResult GetData([DataSourceRequest] DataSourceRequest request)
+    {
+        return Json(new { status = true, message = "OK" });
+    }
+
+    [HttpPost]
+    public JsonResult InsertData(TestClass model)
+    {
+        return Json(new { status = true, message = "OK " + model.Id });
+    }
+}
+public class TestClass
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
 }
 

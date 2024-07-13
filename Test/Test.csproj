@@ -4,8 +4,15 @@
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>0dcc127b-7e38-4256-b732-3959df775a17</UserSecretsId>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
+  <ItemGroup>
+    <PackageReference Include="KendoUICore" Version="2023.1.117" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="7.0.0" />
+    <PackageReference Include="KendoUI_2023" Version="2019.1.115" />
+    <PackageReference Include="SmartIT.Employee.MockDB" Version="1.0.6" />
+  </ItemGroup>
 </Project>

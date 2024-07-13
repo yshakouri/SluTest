@@ -2,6 +2,16 @@
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+//builder.Services.AddKendo();
+// Correctly add Razor Pages with runtime compilation in development environment
+if (builder.Environment.IsDevelopment())
+{
+    builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
+}
+else
+{
+    builder.Services.AddRazorPages();
+}
 
 var app = builder.Build();
 

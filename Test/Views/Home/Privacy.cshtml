@@ -5,3 +5,21 @@
 
 <p>Use this page to detail your site's privacy policy.</p>
 
+
+<button class="btn btn-primary" id="submitButton">Main Submit</button>
+<script>
+    document.getElementById("submitButton").addEventListener("click", function(){
+        $.ajax({
+            url: "/Home/InsertData",
+            type: "POST",
+            data: {
+                name: "John",
+                location: "Boston",
+                id: 1
+            },
+            success: function(response){
+                console.log(response);
+            }
+        });
+    });
+</script>
